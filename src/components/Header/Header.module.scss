@@ -1,0 +1,42 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 20px 0;
+
+	.logo {
+		max-height: 40px;
+	}
+
+	.links {
+		display: flex;
+		align-items: center;
+		gap: 65px;
+
+      a {
+         color: black;
+      }
+	}
+
+	.sdoLink {
+		padding: 10.5px 20px;
+		border-radius: 99px;
+		background-color: transparent;
+		border: blue 1px solid;
+      color: blue;
+
+
+		font-size: 18px;
+		font-weight: 400;
+      
+      svg {
+			width: 20px;
+			height: 20px;
+		}
+
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+}

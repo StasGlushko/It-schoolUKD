@@ -1,0 +1,294 @@
+/* Section Title */
+.sectionTitle {
+	font-size: 2.25rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+/* Hero Section */
+.heroSection {
+	padding: 4rem 0;
+}
+
+.heroContent {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+.heroText {
+	flex: 1;
+}
+
+.heroTitle {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	line-height: 1.2;
+}
+
+.heroDescription {
+	font-size: 1.125rem;
+	color: #4b5563;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+.heroButton {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	background-color: #9b0000;
+	color: white;
+	border: none;
+	border-radius: 0.25rem;
+	font-weight: 500;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: #800000;
+		color: white;
+	}
+}
+
+.heroImageWrapper {
+	flex: 1;
+
+	@media (max-width: 767px) {
+		order: -1;
+	}
+}
+
+.heroImage {
+	width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+	object-fit: cover;
+}
+
+/* Courses Section */
+.coursesSection {
+	padding: 4rem 0;
+	background-color: #f9fafb;
+}
+
+.coursesHeader {
+	margin-bottom: 3rem;
+}
+
+.coursesDescription {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+
+	p {
+		color: #4b5563;
+		line-height: 1.6;
+	}
+}
+
+.coursesGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+
+	@media (min-width: 640px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.courseCard {
+	border-radius: 0.5rem;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: translateY(-5px);
+	}
+}
+
+.courseImageWrapper {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+.courseImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.courseContent {
+	padding: 1.5rem;
+	background-color: #9b0000;
+	color: white;
+}
+
+.courseTitle {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+}
+
+.courseDescription {
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+/* Video Section */
+.videoSection {
+	padding: 4rem 0;
+}
+
+.videoWrapper {
+	position: relative;
+	width: 100%;
+	height: 650px;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.videoOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+}
+
+.playButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: none;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.playIcon {
+	width: 2rem;
+	height: 2rem;
+	color: white;
+}
+
+.videoThumbnail {
+	width: 100%;
+	height: 650px;
+	// display: block;
+	object-fit: cover;
+}
+
+/* Advantages Section */
+.advantagesSection {
+	padding: 4rem 0;
+	background-color: #f9fafb;
+}
+
+.advantagesGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+
+	@media (min-width: 640px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.advantageCard {
+	display: flex;
+	gap: 1.5rem;
+	padding: 1.5rem;
+	background-color: white;
+	border-radius: 0.5rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.advantageIcon {
+	position: relative;
+	flex-shrink: 0;
+	width: 3rem;
+	height: 3rem;
+}
+
+.icon {
+	width: 3rem;
+	height: 3rem;
+	color: #9b0000;
+}
+
+.advantageNumber {
+	position: absolute;
+	top: -0.5rem;
+	right: -0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-color: #9b0000;
+	color: white;
+	border-radius: 50%;
+	font-weight: bold;
+	font-size: 0.875rem;
+}
+
+.advantageContent {
+	flex: 1;
+}
+
+.advantageTitle {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+}
+
+.advantageDescription {
+	color: #4b5563;
+	line-height: 1.6;
+	font-size: 0.95rem;
+}
+
+/* Comments Section */
+.commentsSection {
+	padding: 4rem 0;
+}

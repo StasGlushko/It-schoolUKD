@@ -1,0 +1,45 @@
+@use './reset.scss';
+@use './variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', serif;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
+
+	box-sizing: border-box;
+
+
+	::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: rgb(172, 178, 203);
+		border-radius: 15px;
+		border: 1px solid #11111100;
+	}
+}
+
+button {
+	font-family: 'Montserrat', serif;
+	cursor: pointer;
+}
+
+a {
+	color: #000;
+
+	&:hover {
+		color: #000;
+	}
+}
