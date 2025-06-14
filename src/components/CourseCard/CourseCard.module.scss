@@ -5,6 +5,8 @@
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease;
 
+	min-height: 355px;
+
 	&:hover {
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
@@ -23,6 +25,11 @@
 
 .courseContent {
 	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	max-height: 160px;
 }
 
 .courseTitle {
@@ -35,13 +42,20 @@
 	color: #4b5563;
 	margin-bottom: 1rem;
 	font-size: 0.95rem;
+
+	overflow: hidden; /* Приховати текст, що не входить у ліміт */
+	text-overflow: ellipsis; /* Додати три крапки для позначення, що текст обрізаний */
+	display: -webkit-box; /* Додайте -webkit-box для мобільних браузерів */
+	-webkit-box-orient: vertical; /* Вертикальне вирівнювання рядків */
+	-webkit-line-clamp: 2; /* Обмежити кількість рядків до 3 */
+	line-clamp: 2; /* Обмежити кількість рядків до 3 */
 }
 
 .courseFooter {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 1rem;
+	// margin-bottom: 1rem;
 }
 
 .courseDuration {

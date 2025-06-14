@@ -1,0 +1,103 @@
+.container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.header {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+  }
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f3f4f6;
+  border-radius: 0.375rem;
+  padding: 0.25rem;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  font-weight: 500;
+
+  &:hover {
+    color: #374151;
+  }
+}
+
+.tabActive {
+  background: white;
+  color: #111827;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tabIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.tabContent {
+  // Контент табів буде стилізований в окремих компонентах
+}

@@ -21,8 +21,10 @@ export const CourseCard: FC<IProps> = ({ course }) => {
 				/>
 			</div>
 			<div className={s.courseContent}>
-				<h3 className={s.courseTitle}>{title}</h3>
-				<p className={s.courseDescription}>{shortDescription}</p>
+				<div>
+					<h3 className={s.courseTitle}>{title}</h3>
+					<p className={s.courseDescription}>{shortDescription}</p>
+				</div>
 				<div className={s.courseFooter}>
 					<span className={s.courseDuration}>{duration}</span>
 					<NavLink

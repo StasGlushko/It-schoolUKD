@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import s from './Home.module.scss'
-import { CourseInfoCard } from '../../components/CourseInfoCard/CourseInfoCard'
+import { CourseInfoCards } from '../../components/CourseInfoCards/CourseInfoCards'
 import { IAdvantagesInfo, ICoursesInfo } from '../../types/Types'
 import { AdvantageCard } from '../../components/AdvantageCard/AdvantageCard'
 import { NavLink } from 'react-router'
@@ -10,61 +10,11 @@ import { BiPlay } from 'react-icons/bi'
 import { BsPlayBtn, BsPlayFill } from 'react-icons/bs'
 import { CommentsSection } from '../../components/CommentsSection/CommentsSection'
 
-// const corsesInfo: ICoursesInfo[] = [
-// 	{
-// 		id: 1,
-// 		name: 'Інформаційні технології та програмування',
-// 		description:
-// 			'Навчимо створювати ігри та додатки, працювати з 3D-моделями та анімацією!',
-// 	},
-// 	{
-// 		id: 2,
-// 		name: 'Робототехніка',
-// 		description:
-// 			'Хочете створювати роботів? На курсі ви навчитеся конструювати та програмувати їх, реалізуючи власні проєкти!',
-// 	},
-// 	{
-// 		id: 3,
-// 		name: 'Англійська мова',
-// 		description:
-// 			'Покращуйте знання англійської для IT! Навчимо розуміти технічні терміни та спілкуватися з друзями з інших країн.',
-// 	},
-// 	{
-// 		id: 4,
-// 		name: 'Мобільна фотографія',
-// 		description:
-// 			'Дізнайтеся, як створювати круті фото та редагувати їх прямо на смартфоні!',
-// 	},
-// ]
-
-// const advantagesInfo: IAdvantagesInfo[] = [
-// 	{
-// 		id: 1,
-// 		text: 'Безпека та комфорт: сучасна інфраструктура, включаючи 2 укриття та резервне живлення, забезпечує безперервність навчального процесу і безпеку учнів. На даний момент це позиція НОМЕР 1!!!!',
-// 	},
-// 	{
-// 		id: 2,
-// 		text: 'Програма розроблена з урахуванням сучасних тенденцій в IT-індустрії, що забезпечує актуальні знання та навички. Кожного року програма переглядається та змінюється відповідно до вимог ІТ-ринку.',
-// 	},
-// 	{
-// 		id: 3,
-// 		text: 'Професійні викладачі: викладачі мають досвід роботи в IT-сфері, що дозволяє їм ділитися практичними знаннями та навичками. Переважна більшість наших викладачів є випускниками університету.',
-// 	},
-// 	{
-// 		id: 4,
-// 		text: 'Інноваційні методи навчання: використання сучасних технологій та інтерактивних методів викладання робить навчання більш цікавим та ефективним.',
-// 	},
-// 	{
-// 		id: 5,
-// 		text: "Сучасне технічне обладнання: комп'ютерні класи оснащені потужною технікою, усі аудиторії обладнані мультимедійними проекторами, а для відтворення результатів навчання також є 3D-принтер.",
-// 	},
-// 	{
-// 		id: 6,
-// 		text: 'Випускники школи отримують не лише знання, а й можливість продовжити навчання у Фаховому коледжі або університеті, що відкриває перед ними широкі кар’єрні можливості.',
-// 	},
-// ]
 
 export const Home: FC = () => {
+
+
+
 	return (
 		<div className={s.homePage}>
 			{/* Hero Section */}
@@ -109,83 +59,7 @@ export const Home: FC = () => {
 				</div>
 
 				<div className={s.coursesGrid}>
-					<div className={s.courseCard}>
-						<div className={s.courseImageWrapper}>
-							<img
-								src='/placeholder.svg?height=200&width=350'
-								alt='Інформаційні технології та програмування'
-								width={350}
-								height={200}
-								className={s.courseImage}
-							/>
-						</div>
-						<div className={s.courseContent}>
-							<h3 className={s.courseTitle}>
-								Інформаційні технології та програмування
-							</h3>
-							<p className={s.courseDescription}>
-								Навчимо створювати ігри та додатки, працювати з
-								3D-графікою.
-							</p>
-						</div>
-					</div>
-
-					<div className={s.courseCard}>
-						<div className={s.courseImageWrapper}>
-							<img
-								src='/placeholder.svg?height=200&width=350'
-								alt='Робототехніка'
-								width={350}
-								height={200}
-								className={s.courseImage}
-							/>
-						</div>
-						<div className={s.courseContent}>
-							<h3 className={s.courseTitle}>Робототехніка</h3>
-							<p className={s.courseDescription}>
-								Хочете створювати роботів? На курсі ви навчитесь
-								конструювати та програмувати їх, реалізуючи власні ідеї.
-							</p>
-						</div>
-					</div>
-
-					<div className={s.courseCard}>
-						<div className={s.courseImageWrapper}>
-							<img
-								src='/placeholder.svg?height=200&width=350'
-								alt='Англійська мова'
-								width={350}
-								height={200}
-								className={s.courseImage}
-							/>
-						</div>
-						<div className={s.courseContent}>
-							<h3 className={s.courseTitle}>Англійська мова</h3>
-							<p className={s.courseDescription}>
-								Покращуйте знання англійської для IT! Навчимо розуміти
-								технічні терміни та спілкуватися з друзями.
-							</p>
-						</div>
-					</div>
-
-					<div className={s.courseCard}>
-						<div className={s.courseImageWrapper}>
-							<img
-								src='/placeholder.svg?height=200&width=350'
-								alt='Мобільна фотографія'
-								width={350}
-								height={200}
-								className={s.courseImage}
-							/>
-						</div>
-						<div className={s.courseContent}>
-							<h3 className={s.courseTitle}>Мобільна фотографія</h3>
-							<p className={s.courseDescription}>
-								Дізнайтеся, як створювати круті фото та редагувати їх
-								прямо на смартфоні!
-							</p>
-						</div>
-					</div>
+					<CourseInfoCards />
 				</div>
 			</section>
 
