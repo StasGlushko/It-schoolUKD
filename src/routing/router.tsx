@@ -1,4 +1,3 @@
-// import { createBrowserRouter } from 'react-router'
 import { createBrowserRouter } from 'react-router-dom'
 
 import { ErrorPage } from '../pages/Router-error-page/Error-page'

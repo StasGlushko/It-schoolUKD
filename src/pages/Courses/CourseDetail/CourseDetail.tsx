@@ -1,6 +1,6 @@
 import styles from './courseDetail.module.scss'
 import { Paths } from '../../../routing/paths'
-import { NavLink, useParams } from 'react-router'
+import { NavLink, useParams } from 'react-router-dom'
 import { FC } from 'react'
 import { useGetCourseByIdQuery } from '../../../store/features/courses/coursesApi'
 

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { ICourse } from '../../types/Types'
 import s from './CourseCard.module.scss'
-import { NavLink } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import { Paths } from './../../routing/paths'
 
 interface IProps {

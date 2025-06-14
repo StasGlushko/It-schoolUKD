@@ -4,7 +4,7 @@ import { HiMenu, HiX } from 'react-icons/hi'
 import s from './Header.module.scss'
 import { Link } from './Link/Link'
 import { Paths } from '../../routing/paths'
-import { useLocation } from 'react-router'
+import { useLocation } from 'react-router-dom'
 
 interface ILink {
 	path: string
