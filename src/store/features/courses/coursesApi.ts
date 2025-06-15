@@ -13,21 +13,45 @@ export const coursesApi = createApi({
 			return headers
 		},
 	}),
+	tagTypes: ['Course'],
 	endpoints: builder => ({
 		getCourses: builder.query<ICourse[], void>({
 			query: () => 'Courses',
+			providesTags: ['Course'],
 		}),
 		getCourseById: builder.query<ICourse, number>({
 			query: id => `Courses/${id}`,
+		}),
+		createCourse: builder.mutation<void, FormData>({
+			query: formData => ({
+				url: `Courses`,
+				method: 'POST',
+				body: formData,
+			}),
+			invalidatesTags: ['Course'],
+		}),
+		updateCourse: builder.mutation<void, { id: number; data: FormData }>({
+			query: ({ id, data }) => ({
+				url: `Courses/${id}`,
+				method: 'PUT',
+				body: data,
+			}),
+			invalidatesTags: ['Course'],
 		}),
 		deleteCourse: builder.mutation<void, number>({
 			query: id => ({
 				url: `Courses/${id}`,
 				method: 'DELETE',
 			}),
-			// invalidatesTags: ['Course'], // якщо додаси tag у getCourses
+			invalidatesTags: ['Course'],
 		}),
 	}),
 })
 
-export const { useGetCoursesQuery, useGetCourseByIdQuery, useDeleteCourseMutation } = coursesApi
+export const {
+	useGetCoursesQuery,
+	useGetCourseByIdQuery,
+	useDeleteCourseMutation,
+	useCreateCourseMutation,
+	useUpdateCourseMutation,
+} = coursesApi

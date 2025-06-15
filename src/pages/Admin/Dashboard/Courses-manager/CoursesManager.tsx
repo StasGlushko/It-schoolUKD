@@ -2,8 +2,10 @@ import type React from 'react'
 import { useState } from 'react'
 import s from './CoursesManager.module.scss'
 import {
+	useCreateCourseMutation,
 	useDeleteCourseMutation,
 	useGetCoursesQuery,
+	useUpdateCourseMutation,
 } from '../../../../store/features/courses/coursesApi'
 
 interface Course {
@@ -13,10 +15,12 @@ interface Course {
 	shortDescription: string
 	price: number
 	duration: string
-	imageUrl: string
 }
 
 export const CoursesManager = () => {
+	const [updateCourse] = useUpdateCourseMutation()
+	const [createCourse] = useCreateCourseMutation()
+	const [selectedImageFile, setSelectedImageFile] = useState<File | null>(null)
 	const { data: courses = [], isLoading, isError } = useGetCoursesQuery()
 	const [deleteCourse] = useDeleteCourseMutation()
 
@@ -28,11 +32,12 @@ export const CoursesManager = () => {
 		shortDescription: '',
 		price: 0,
 		duration: '',
-		imageUrl: '',
 	})
 
 	if (isLoading) return <p>Завантаження курсів...</p>
 	if (isError) return <p>Сталася помилка при завантаженні курсів</p>
+
+	const reversCourses = [...courses].reverse()
 
 	const resetForm = () => {
 		setFormData({
@@ -41,28 +46,42 @@ export const CoursesManager = () => {
 			shortDescription: '',
 			price: 0,
 			duration: '',
-			imageUrl: '',
 		})
+		setSelectedImageFile(null)
 		setEditingCourse(null)
 	}
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
+		const submissionData = new FormData()
+		submissionData.append('title', formData.title)
+		submissionData.append('description', formData.description)
+		submissionData.append('shortDescription', formData.shortDescription)
+		submissionData.append('price', String(formData.price))
+		submissionData.append('duration', formData.duration)
 
-		if (editingCourse) {
-			// setCourses(prev =>
-			// 	prev.map(course =>
-			// 		course.id === editingCourse.id
-			// 			? { ...formData, id: editingCourse.id }
-			// 			: course,
-			// 	),
-			// )
-		} else {
-			const newCourse: Course = {
-				...formData,
-				id: Date.now(),
+		// якщо користувач обрав файл
+		if (selectedImageFile) {
+			submissionData.append('image', selectedImageFile)
+		}
+
+		// якщо хочеш передати викладачів (опціонально)
+		submissionData.append('teachers', JSON.stringify([])) // або з масиву
+
+		try {
+			if (editingCourse) {
+				await updateCourse({
+					id: editingCourse.id,
+					data: submissionData,
+				}).unwrap()
+				alert('Курс оновлено!')
+			} else {
+				await createCourse(submissionData).unwrap()
+				alert('Курс створено!')
 			}
-			// setCourses(prev => [...prev, newCourse])
+		} catch (err) {
+			console.error('Помилка:', err)
+			alert('Помилка при створенні курсу')
 		}
 
 		setIsDialogOpen(false)
@@ -77,7 +96,6 @@ export const CoursesManager = () => {
 			shortDescription: course.shortDescription,
 			price: course.price,
 			duration: course.duration,
-			imageUrl: course.imageUrl,
 		})
 		setIsDialogOpen(true)
 	}
@@ -139,7 +157,7 @@ export const CoursesManager = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{courses.map(course => (
+						{reversCourses.map(course => (
 							<tr key={course.id}>
 								<td className={s.titleCell}>{course.title}</td>
 								<td>{course.shortDescription}</td>
@@ -302,18 +320,15 @@ export const CoursesManager = () => {
 									/>
 								</div>
 								<div className={s.field}>
-									<label className={s.label}>URL зображення</label>
+									<label className={s.label}>Зображення (файл)</label>
 									<input
-										type='url'
+										type='file'
+										accept='image/*'
 										className={s.input}
-										value={formData.imageUrl}
-										onChange={e =>
-											setFormData(prev => ({
-												...prev,
-												imageUrl: e.target.value,
-											}))
-										}
-										required
+										onChange={e => {
+											const file = e.target.files?.[0]
+											if (file) setSelectedImageFile(file)
+										}}
 									/>
 								</div>
 							</div>
