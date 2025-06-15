@@ -20,9 +20,9 @@ interface Course {
 export const CoursesManager = () => {
 	const [updateCourse] = useUpdateCourseMutation()
 	const [createCourse] = useCreateCourseMutation()
+	const [deleteCourse] = useDeleteCourseMutation()
 	const [selectedImageFile, setSelectedImageFile] = useState<File | null>(null)
 	const { data: courses = [], isLoading, isError } = useGetCoursesQuery()
-	const [deleteCourse] = useDeleteCourseMutation()
 
 	const [isDialogOpen, setIsDialogOpen] = useState(false)
 	const [editingCourse, setEditingCourse] = useState<Course | null>(null)
@@ -105,8 +105,6 @@ export const CoursesManager = () => {
 			try {
 				await deleteCourse(id).unwrap()
 				alert('Курс успішно видалений!')
-
-				// setCourses(prev => prev.filter(course => course.id !== id)) // або перезапросити список
 			} catch (error) {
 				console.error('Помилка при видаленні курсу:', error)
 				alert('Не вдалося видалити курс. Спробуйте ще раз.')
