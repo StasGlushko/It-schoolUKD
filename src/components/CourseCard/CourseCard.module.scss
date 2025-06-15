@@ -36,6 +36,13 @@
 	font-size: 1.25rem;
 	font-weight: 700;
 	margin-bottom: 0.5rem;
+
+	overflow: hidden; /* Приховати текст, що не входить у ліміт */
+	text-overflow: ellipsis; /* Додати три крапки для позначення, що текст обрізаний */
+	display: -webkit-box; /* Додайте -webkit-box для мобільних браузерів */
+	-webkit-box-orient: vertical; /* Вертикальне вирівнювання рядків */
+	-webkit-line-clamp: 2; /* Обмежити кількість рядків до 3 */
+	line-clamp: 2; /* Обмежити кількість рядків до 3 */
 }
 
 .courseDescription {

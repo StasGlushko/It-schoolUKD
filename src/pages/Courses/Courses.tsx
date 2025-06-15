@@ -7,7 +7,8 @@ export const Courses: FC = () => {
 	const { data: courses, error, isLoading } = useGetCoursesQuery()
 
 	if (isLoading) return <p>Loading...</p>
-	if (error) return <p>Error: {(error as any).message}</p>	
+	if (error) return <p>Error: {(error as any).message}</p>
+	const reversCourses = courses && [...courses].reverse()
 
 	return (
 		<main className={s.main}>
@@ -19,7 +20,7 @@ export const Courses: FC = () => {
 				</p>
 
 				<div className={s.courseGrid}>
-					{courses?.map(course => (
+					{reversCourses?.map(course => (
 						<CourseCard key={course.id} course={course} />
 					))}
 				</div>
