@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			'/api': {
-				target: 'https://one23-v1-0.onrender.com',
+				target: 'https://ukd-it-school.onrender.com',
 				changeOrigin: true,
 				secure: false, // якщо HTTPS без валідного сертифіката — можна залишити
 				rewrite: path => path.replace(/^\/api/, ''),

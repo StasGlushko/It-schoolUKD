@@ -27,3 +27,13 @@ export interface ITeachers {
 	imageUrl: string
 	courses: []
 }
+
+export interface ICourseRegistrations {
+	id: number
+	firstName: string
+	lastName: string
+	phoneNumber: string
+	courseId: number
+	courseTitle: null | string
+	createdAt: string
+}

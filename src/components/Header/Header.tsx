@@ -18,9 +18,9 @@ export const Header = () => {
 	const location = useLocation()
 
 	const links: ILink[] = [
-		{ path: Paths.home, name: 'Home' },
-		{ path: Paths.about, name: 'About' },
-		{ path: Paths.courses, name: 'Courses' },
+		{ path: Paths.home, name: 'Головна' },
+		{ path: Paths.about, name: 'Про нас' },
+		{ path: Paths.courses, name: 'Курси' },
 	]
 
 	useEffect(() => {

@@ -3,6 +3,7 @@ import { Paths } from '../../../routing/paths'
 import { NavLink, useParams } from 'react-router-dom'
 import { FC } from 'react'
 import { useGetCourseByIdQuery } from '../../../store/features/courses/coursesApi'
+import { CourseRegistrationForm } from '../../../components/CourseRegistrationForm/CourseRegistrationForm'
 
 // interface IProps {}
 
@@ -61,32 +62,11 @@ export const CourseDetail: FC = () => {
 					</div>
 				)} */}
 
-				<div className={styles.actionContainer}>
-					<NavLink to='#' className={styles.registerButton}>
-						Зареєструватися на курс
-					</NavLink>
+				
+				<div className={styles.registrationSection}>
+					<CourseRegistrationForm currentCourseId={course.id} />
 				</div>
 			</div>
 		</main>
 	)
 }
-
-// {
-// 	id: '1',
-// 	title: 'Frontend розробка',
-// 	description:
-// 		'Вивчіть HTML, CSS, JavaScript та React для створення сучасних веб-інтерфейсів.',
-// 	fullDescription:
-// 		'Наш курс Frontend розробки надає вам всі необхідні навички для створення сучасних, інтерактивних веб-сайтів та додатків. Ви вивчите основи HTML, CSS та JavaScript, а потім перейдете до сучасних фреймворків, таких як React. Курс включає практичні проекти, які допоможуть вам побудувати портфоліо для майбутнього працевлаштування.',
-// 	duration: '6 місяців',
-// 	price: '12000 грн',
-// 	image: '/placeholder.svg?height=400&width=800',
-// 	curriculum: [
-// 		'Основи HTML та CSS',
-// 		'JavaScript: основи та просунуті концепції',
-// 		'Адаптивний дизайн та CSS фреймворки',
-// 		'React: компоненти, стан, хуки',
-// 		'Робота з API та асинхронним кодом',
-// 		'Фінальний проект: створення повноцінного веб-додатку',
-// 	],
-// },

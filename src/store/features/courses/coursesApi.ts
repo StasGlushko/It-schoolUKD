@@ -4,7 +4,7 @@ import { ICourse } from '../../../types/Types'
 export const coursesApi = createApi({
 	reducerPath: 'coursesApi',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://localhost:5065/api',
+		baseUrl: 'https://ukd-it-school.onrender.com/api',
 		prepareHeaders: headers => {
 			const token = localStorage.getItem('adminToken') // або інша назва
 			if (token) {

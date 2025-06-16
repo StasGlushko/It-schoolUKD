@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { TeachersManager } from './Teachers-manager/TeachersManager'
 import { CoursesManager } from './Courses-manager/CoursesManager'
 import s from './dashboard.module.scss'
+import { CourseRegistrationsManager } from './Course-Registrations-manager/CourseRegistrationsManager'
 
 export const AdminDashboard = () => {
 	const navigate = useNavigate()
@@ -87,11 +88,31 @@ export const AdminDashboard = () => {
 							</svg>
 							Викладачі
 						</button>
+						<button
+							className={`${s.tab} ${
+								activeTab === 'courseRegistrations' ? s.tabActive : ''
+							}`}
+							onClick={() => setActiveTab('courseRegistrations')}>
+							<svg
+								className={s.tabIcon}
+								fill='none'
+								stroke='currentColor'
+								viewBox='0 0 24 24'>
+								<path
+									strokeLinecap='round'
+									strokeLinejoin='round'
+									strokeWidth={2}
+									d='M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z'
+								/>
+							</svg>
+							Реєстрація на курси
+						</button>
 					</div>
 
 					<div className={s.tabContent}>
 						{activeTab === 'courses' && <CoursesManager />}
 						{activeTab === 'teachers' && <TeachersManager />}
+						{activeTab === 'courseRegistrations' && <CourseRegistrationsManager />}
 					</div>
 				</div>
 			</main>

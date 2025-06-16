@@ -7,7 +7,7 @@ export const Footer = () => {
 				<div className={s.footerContainer}>
 					<div className={s.footerGrid}>
 						<div className={s.footerColumn}>
-							<h3 className={s.footerTitle}>UKD IT School</h3>
+							<h3 className={s.footerTitle}>IT-школа УКД</h3>
 							<p className={s.footerText}>
 								Це місце, де учні не лише навчаються, але й готуються до
 								успішної кар'єри в сфері технологій!

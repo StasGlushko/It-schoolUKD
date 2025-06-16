@@ -24,7 +24,7 @@ export const About: FC = () => {
 						</div>
 						<div className={s.heroImageWrapper}>
 							<img
-								src='/placeholder.svg?height=400&width=600'
+								src='/aboutPoster.jpg'
 								alt='IT-школа УКД'
 								width={600}
 								height={400}
@@ -53,7 +53,7 @@ export const About: FC = () => {
 						<div className={s.advantageCard}>
 							<div className={s.advantageImageWrapper}>
 								<img
-									src='/placeholder.svg?height=300&width=400'
+									src='https://i.postimg.cc/T2Bbtqd1/img1.jpg'
 									alt='Ранній старт у програмуванні'
 									width={400}
 									height={300}
@@ -75,7 +75,7 @@ export const About: FC = () => {
 						<div className={s.advantageCard}>
 							<div className={s.advantageImageWrapper}>
 								<img
-									src='/placeholder.svg?height=300&width=400'
+									src='https://i.postimg.cc/mrdzC7pb/img2.jpg'
 									alt='Побудова впевненості у власних силах'
 									width={400}
 									height={300}
@@ -97,7 +97,7 @@ export const About: FC = () => {
 						<div className={s.advantageCard}>
 							<div className={s.advantageImageWrapper}>
 								<img
-									src='/placeholder.svg?height=300&width=400'
+									src='https://i.postimg.cc/XYs7z4fL/img3.jpg'
 									alt='Підготовка до IT-професій'
 									width={400}
 									height={300}

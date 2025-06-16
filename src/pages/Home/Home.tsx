@@ -1,19 +1,29 @@
-import { FC } from 'react'
+import { FC, useRef, useState } from 'react'
 import s from './Home.module.scss'
 import { CourseInfoCards } from '../../components/CourseInfoCards/CourseInfoCards'
-import { IAdvantagesInfo, ICoursesInfo } from '../../types/Types'
-import { AdvantageCard } from '../../components/AdvantageCard/AdvantageCard'
 import { NavLink } from 'react-router-dom'
 import { Paths } from '../../routing/paths'
 import { FaStar } from 'react-icons/fa'
-import { BiPlay } from 'react-icons/bi'
-import { BsPlayBtn, BsPlayFill } from 'react-icons/bs'
-import { CommentsSection } from '../../components/CommentsSection/CommentsSection'
-
+import { BsPlayFill } from 'react-icons/bs'
+// import { CommentsSection } from '../../components/CommentsSection/CommentsSection'
 
 export const Home: FC = () => {
+	const videoRef = useRef<HTMLVideoElement | null>(null)
+	const [isPlaying, setIsPlaying] = useState(false)
 
-
+	const handlePlay = () => {
+		if (videoRef.current) {
+			videoRef.current.muted = false // ← явно
+			videoRef.current
+				.play()
+				.then(() => {
+					setIsPlaying(!isPlaying)
+				})
+				.catch(err => {
+					console.error('Помилка запуску відео:', err)
+				})
+		}
+	}
 
 	return (
 		<div className={s.homePage}>
@@ -21,7 +31,10 @@ export const Home: FC = () => {
 			<section className={s.heroSection}>
 				<div className={s.heroContent}>
 					<div className={s.heroText}>
-						<h1 className={s.heroTitle}>Welcome to UKD IT School</h1>
+						<h1 className={s.heroTitle}>
+							Ласкаво просимо до <br />
+							IT-школи УКД
+						</h1>
 						<p className={s.heroDescription}>
 							Це місце, де учні не лише навчаються, але й готуються до
 							успішної кар'єри в сфері технологій!
@@ -32,7 +45,7 @@ export const Home: FC = () => {
 					</div>
 					<div className={s.heroImageWrapper}>
 						<img
-							src='/placeholder.svg?height=400&width=600'
+							src='/bigLogo.png'
 							alt='UKD IT School'
 							width={600}
 							height={400}
@@ -65,17 +78,26 @@ export const Home: FC = () => {
 
 			{/* Video Section */}
 			<section className={s.videoSection}>
-				<div className={s.videoWrapper}>
+				<div className={s.videoWrapper} onClick={handlePlay}>
 					<div className={s.videoOverlay}>
-						<button className={s.playButton} aria-label='Play video'>
-							<BsPlayFill className={s.playIcon} />
-						</button>
+						{!isPlaying && (
+							<div className={s.playButton}>
+								<BsPlayFill className={s.playIcon} />
+							</div>
+						)}
 					</div>
-					<img
-						src='/placeholder.svg?height=600&width=1200'
-						alt='UKD IT School Video'
+					<video
+						ref={videoRef}
 						className={s.videoThumbnail}
-					/>
+						// src='https://drive.google.com/uc?export=download&id=1k21H7I0BvaebbabEesnuG-d4yksPcH1O'
+						controls={isPlaying}
+						muted>
+						<source
+							src='https://res.cloudinary.com/dwulmhtt8/video/upload/v1750109751/ohfqryotvuvjcucud1ki.mp4'
+							type='video/mp4'
+						/>
+						Ваш браузер не підтримує відтворення відео.
+					</video>
 				</div>
 			</section>
 
@@ -183,10 +205,10 @@ export const Home: FC = () => {
 			</section>
 
 			{/* Comments Section */}
-			<section className={s.commentsSection}>
+			{/* <section className={s.commentsSection}>
 				<h2 className={s.sectionTitle}>Відгуки наших учнів</h2>
 				<CommentsSection />
-			</section>
+			</section> */}
 		</div>
 	)
 }
