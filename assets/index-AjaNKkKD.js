@@ -58,7 +58,7 @@ Please change the parent <Route path="${S}"> to <Route path="${S==="/"?"*":`${S}
  * LICENSE.md file in the root directory of this source tree.
  *
  * @license MIT
- */function I1(n){return D.createElement(V0,{flushSync:M1.flushSync,...n})}const b1="_container_1tndb_1",D1={container:b1},yc=()=>{const n=jm();let i;return Zi(n)?i=n.data||n.statusText:n instanceof Error?i=n.message:typeof n=="string"?i=n:(console.error(n),i="Unknown error"),m.jsxs("div",{className:D1.container,id:"error-page",children:[m.jsx("h1",{children:"Oops!"}),m.jsx("p",{children:"Sorry, an unexpected error has occurred."}),m.jsx("p",{children:m.jsx("i",{children:i})})]})},pn={home:"/",admin:"/adminLogin",adminDashboard:"/adminDashboard",about:"/about",courses:"/courses",course:"/courses/:id"},L1="_container_1ca23_1",O1={container:L1};var vc={exports:{}};/*!
+ */function I1(n){return D.createElement(V0,{flushSync:M1.flushSync,...n})}const b1="_container_1tndb_1",D1={container:b1},yc=()=>{const n=jm();let i;return Zi(n)?i=n.data||n.statusText:n instanceof Error?i=n.message:typeof n=="string"?i=n:(console.error(n),i="Unknown error"),m.jsxs("div",{className:D1.container,id:"error-page",children:[m.jsx("h1",{children:"Oops!"}),m.jsx("p",{children:"Sorry, an unexpected error has occurred."}),m.jsx("p",{children:m.jsx("i",{children:i})})]})},pn={home:"/",admin:"/admin/login",adminDashboard:"/admin/dashboard",about:"/about",courses:"/courses",course:"/courses/:id"},L1="_container_1ca23_1",O1={container:L1};var vc={exports:{}};/*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
