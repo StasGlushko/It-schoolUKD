@@ -1,7 +1,7 @@
 export const Paths = {
 	home: '/',
-	admin: '/admin/login',
-	adminDashboard: '/admin/dashboard',
+	admin: '/adminLogin',
+	adminDashboard: '/adminDashboard',
 	about: '/about',
 	courses: '/courses',
 	course: '/courses/:id'
