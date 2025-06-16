@@ -45,7 +45,7 @@ export const Home: FC = () => {
 					</div>
 					<div className={s.heroImageWrapper}>
 						<img
-							src='/bigLogo.png'
+							src={`${import.meta.env.BASE_URL}bigLogo.png`}
 							alt='UKD IT School'
 							width={600}
 							height={400}

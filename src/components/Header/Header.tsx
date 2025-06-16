@@ -49,7 +49,7 @@ export const Header = () => {
 
 	return (
 		<header className={s.header}>
-			<img src='/logo.png' alt='Logo' className={s.logo} />
+			<img src={`${import.meta.env.BASE_URL}logo.png`} alt='Logo' className={s.logo} />
 
 			{/* Desktop navigation */}
 			<ul className={s.links}>
