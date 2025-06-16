@@ -1,8 +1,4 @@
 import s from './CourseRegistrationsManager.module.scss'
-import {
-	useDeleteTeacherMutation,
-	useGetTeachersQuery,
-} from '../../../../store/features/teachers/teachersApi'
 import { useDeleteCourseRegistrationsByIdMutation, useGetCourseRegistrationsQuery } from '../../../../store/features/course-registrations/course-registrationsApi'
 
 // interface Teacher {
