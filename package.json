@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://StasGlushko.github.io/It-schoolUKD",
+	"homepage": "https://stasglushko.github.io/It-schoolUKD",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
