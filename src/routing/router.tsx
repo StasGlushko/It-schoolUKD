@@ -10,38 +10,43 @@ import { CourseDetail } from '../pages/Courses/CourseDetail/CourseDetail'
 import { AdminLogin } from '../pages/Admin/Login/Login'
 import { AdminDashboard } from '../pages/Admin/Dashboard/Dashboard'
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+	[
+		{
+			path: Paths.home,
+			element: <App />,
+			errorElement: <ErrorPage />,
+			children: [
+				{
+					path: '',
+					element: <Home />,
+				},
+				{
+					path: Paths.about,
+					element: <About />,
+				},
+				{
+					path: Paths.courses,
+					element: <Courses />,
+				},
+				{
+					path: Paths.course,
+					element: <CourseDetail />,
+				},
+			],
+		},
+		{
+			path: Paths.admin,
+			element: <AdminLogin />,
+			errorElement: <ErrorPage />,
+		},
+		{
+			path: Paths.adminDashboard,
+			element: <AdminDashboard />,
+			errorElement: <ErrorPage />,
+		},
+	],
 	{
-		path: Paths.home,
-		element: <App />,
-		errorElement: <ErrorPage />,
-		children: [
-			{
-				path: '',
-				element: <Home />,
-			},
-			{
-				path: Paths.about,
-				element: <About />,
-			},
-			{
-				path: Paths.courses,
-				element: <Courses />,
-			},
-			{
-				path: Paths.course,
-				element: <CourseDetail />,
-			},
-		],
+		basename: '/It-schoolUKD', // ← ОЦЕ додай
 	},
-	{
-		path: Paths.admin,
-		element: <AdminLogin />,
-		errorElement: <ErrorPage />,
-	},
-	{
-		path: Paths.adminDashboard,
-		element: <AdminDashboard />,
-		errorElement: <ErrorPage />,
-	},
-])
+)
