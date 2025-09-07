@@ -61,3 +61,10 @@
 		color: #d1d5db;
 	}
 }
+
+
+.footer {
+	@media (max-width: 900px) {
+		padding: 0 30px;
+	}
+}

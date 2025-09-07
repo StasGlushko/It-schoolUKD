@@ -6,7 +6,7 @@
 	"homepage": "https://stasglushko.github.io/It-schoolUKD",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc -b && vite build",
+		"build": "tsc -b && vite build && cp dist/index.html dist/404.html",
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"preinstall": "npx only-allow pnpm",
@@ -15,6 +15,7 @@
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.8.1",
+		"@vis.gl/react-google-maps": "^1.5.5",
 		"axios": "^1.9.0",
 		"classnames": "^2.5.1",
 		"react": "^18.3.1",

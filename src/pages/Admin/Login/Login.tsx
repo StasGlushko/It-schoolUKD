@@ -49,7 +49,7 @@ export const AdminLogin = () => {
 							<strong>Логін:</strong> admin
 						</p>
 						<p>
-							<strong>Пароль:</strong> admin123
+							<strong>Пароль:</strong> BPLJJYKC7L7Kntw
 						</p>
 					</div>
 				</div>

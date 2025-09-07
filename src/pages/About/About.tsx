@@ -24,7 +24,7 @@ export const About: FC = () => {
 						</div>
 						<div className={s.heroImageWrapper}>
 							<img
-								src={`${import.meta.env.BASE_URL}aboutPoster.jpg`}
+								src='https://i.postimg.cc/DfWrW7Nx/about-Poster.jpg'
 								alt='IT-школа УКД'
 								width={600}
 								height={400}

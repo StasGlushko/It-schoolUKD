@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { Paths } from '../../routing/paths'
 import { FaStar } from 'react-icons/fa'
 import { BsPlayFill } from 'react-icons/bs'
+import { APIProvider } from '@vis.gl/react-google-maps'
 // import { CommentsSection } from '../../components/CommentsSection/CommentsSection'
 
 export const Home: FC = () => {
@@ -209,6 +210,12 @@ export const Home: FC = () => {
 				<h2 className={s.sectionTitle}>Відгуки наших учнів</h2>
 				<CommentsSection />
 			</section> */}
+
+			{/* maps */}
+			{/* <APIProvider apiKey='YOUR_GOOGLE_MAPS_API_KEY'>
+				// Your other React components
+				<MyMapComponent />
+			</APIProvider> */}
 		</div>
 	)
 }
